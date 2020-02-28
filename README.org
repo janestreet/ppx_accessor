@@ -26,7 +26,7 @@ This extension provides two features:
    #+BEGIN_SRC ocaml
      { Accessor.f =
          (fun selector mapping ->
-           (Accessor.field ~get ~construct).f selector mapping)
+           (Accessor.field ~get ~set).f selector mapping)
      }
    #+END_SRC
 
