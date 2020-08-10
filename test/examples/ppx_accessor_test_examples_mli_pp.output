@@ -307,8 +307,7 @@ module Recursive_records : sig
             (fun dictionary__079_ mapping__080_ ->
                (Accessor.field
                   ~get:(fun tree__078_ -> tree__078_.next)
-                  ~set:(fun tree__076_ next__077_ ->
-                    { tree__076_ with next = next__077_ }))
+                  ~set:(fun tree__076_ next__077_ -> { tree__076_ with next = next__077_ }))
                .f
                  dictionary__079_
                  mapping__080_)
@@ -320,8 +319,7 @@ module Recursive_records : sig
             (fun dictionary__084_ mapping__085_ ->
                (Accessor.field
                   ~get:(fun node__083_ -> node__083_.host)
-                  ~set:(fun node__081_ host__082_ ->
-                    { node__081_ with host = host__082_ }))
+                  ~set:(fun node__081_ host__082_ -> { node__081_ with host = host__082_ }))
                .f
                  dictionary__084_
                  mapping__085_)

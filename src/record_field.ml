@@ -23,8 +23,7 @@ let record_set_expr { name; loc } ~type_name =
   let value_pat, value_expr = gen_symbol name ~loc in
   [%expr
     fun [%p record_pat] [%p value_pat] ->
-      [%e
-        pexp_record ~loc [ Loc.make (Lident name) ~loc, value_expr ] (Some record_expr)]]
+      [%e pexp_record ~loc [ Loc.make (Lident name) ~loc, value_expr ] (Some record_expr)]]
 ;;
 
 let record_construct_expr { name; loc } =
