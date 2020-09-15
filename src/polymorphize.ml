@@ -6,7 +6,7 @@ let polymorphize ~loc ~expr =
   let dictionary_pat, dictionary_expr = gen_symbol "dictionary" ~loc in
   let mapping_pat, mapping_expr = gen_symbol "mapping" ~loc in
   [%expr
-    { Accessor.f =
+    { Accessor.General.f =
         (fun [%p dictionary_pat] [%p mapping_pat] ->
            [%e expr].f [%e dictionary_expr] [%e mapping_expr])
     }]

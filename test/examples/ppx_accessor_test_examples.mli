@@ -122,7 +122,10 @@ end
 
 module Polymorphization : sig
   val swapped
-    : ('i -> 'a * 'b -> 'c * 'd, 'i -> 'b * 'a -> 'd * 'c, [< isomorphism ]) Accessor.t
+    : ( 'i -> 'a * 'b -> 'c * 'd
+      , 'i -> 'b * 'a -> 'd * 'c
+      , [< isomorphism ] )
+        Accessor.General.t
 end
 
 module Gadt_syntax : sig
