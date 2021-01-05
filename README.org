@@ -1,6 +1,3 @@
-#+title: =ppx_accessor=
-#+parent:../README.md
-#+UUID: 7f561b47-9bfc-3461-f3df-61885d20ae7b
 
 This extension provides two features:
 
