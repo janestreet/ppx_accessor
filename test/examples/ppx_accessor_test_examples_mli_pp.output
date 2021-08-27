@@ -356,7 +356,7 @@ module Basic_variant_type : sig
   [@@deriving accessors]
 
   include sig
-    [@@@ocaml.warning "-32"]
+    [@@@ocaml.warning "-32-60"]
 
     include module type of struct
       let a =
@@ -781,7 +781,7 @@ module Simple_record_with_submodule : sig
   [@@deriving accessors ~submodule:Foo]
 
   include sig
-    [@@@ocaml.warning "-32"]
+    [@@@ocaml.warning "-32-60"]
 
     include module type of struct
       module Foo = struct

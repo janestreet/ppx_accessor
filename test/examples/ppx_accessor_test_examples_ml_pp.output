@@ -369,6 +369,8 @@ module Basic_variant_type = struct
   [@@deriving accessors]
 
   include struct
+    [@@@ocaml.warning "-60"]
+
     let _ = fun (_ : t) -> ()
 
     let a =
@@ -812,6 +814,8 @@ module Simple_record_with_submodule = struct
   [@@deriving accessors ~submodule:Foo]
 
   include struct
+    [@@@ocaml.warning "-60"]
+
     let _ = fun (_ : t) -> ()
 
     module Foo = struct
