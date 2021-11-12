@@ -8,5 +8,5 @@ let to_constructor_string = Fn.id
 
 let to_lowercase_string t =
   let string = String.lowercase t in
-  if Stdlib.Hashtbl.mem Lexer.keyword_table string then string ^ "_" else string
+  if Keyword.is_keyword string then string ^ "_" else string
 ;;
