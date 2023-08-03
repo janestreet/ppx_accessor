@@ -14,7 +14,7 @@ let maybe_wrap_in_submodule structure_items ~loc ~submodule =
 ;;
 
 let generate_structure ~loc ~path:_ (_rec_flag, tds) submodule =
-  List.concat_map tds ~f:(Fn.compose Type.to_strs Type.of_type_declaration)
+  List.concat_map tds ~f:(Fn.compose Type_.to_strs Type_.of_type_declaration)
   |> maybe_wrap_in_submodule ~loc ~submodule
 ;;
 
