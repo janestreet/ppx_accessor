@@ -16,9 +16,9 @@ let gen_pat_expr_opt { fields } ~loc ~name =
 ;;
 
 module Make (M : sig
-    val pat : loc:location -> string -> pattern option -> pattern
-    val exp : loc:location -> string -> expression option -> expression
-  end) =
+  val pat : loc:location -> string -> pattern option -> pattern
+  val exp : loc:location -> string -> expression option -> expression
+end) =
 struct
   let wildcard_pattern { fields } ~loc =
     match fields with
@@ -90,11 +90,11 @@ struct
 end
 
 module Inline = Make (struct
-    let pat ~loc name pat = ppat_construct ~loc (Loc.make ~loc (Lident name)) pat
-    let exp ~loc name expr = pexp_construct ~loc (Loc.make ~loc (Lident name)) expr
-  end)
+  let pat ~loc name pat = ppat_construct ~loc (Loc.make ~loc (Lident name)) pat
+  let exp ~loc name expr = pexp_construct ~loc (Loc.make ~loc (Lident name)) expr
+end)
 
 module Polymorphic_variant = Make (struct
-    let pat = ppat_variant
-    let exp = pexp_variant
-  end)
+  let pat = ppat_variant
+  let exp = pexp_variant
+end)
