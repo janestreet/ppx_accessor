@@ -125,7 +125,7 @@ module Polymorphization : sig
     : ( 'i -> 'a * 'b -> 'c * 'd
       , 'i -> 'b * 'a -> 'd * 'c
       , [< isomorphism ] )
-        Accessor.General.t
+      Accessor.General.t
 end
 
 module Gadt_syntax : sig

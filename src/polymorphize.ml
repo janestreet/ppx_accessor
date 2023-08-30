@@ -8,7 +8,7 @@ let polymorphize ~loc ~expr =
   [%expr
     { Accessor.General.f =
         (fun [%p dictionary_pat] [%p mapping_pat] ->
-           [%e expr].f [%e dictionary_expr] [%e mapping_expr])
+          [%e expr].f [%e dictionary_expr] [%e mapping_expr])
     }]
 ;;
 

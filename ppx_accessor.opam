@@ -1,5 +1,4 @@
 opam-version: "2.0"
-version: "v0.16.1"
 maintainer: "Jane Street developers"
 authors: ["Jane Street Group, LLC"]
 homepage: "https://github.com/janestreet/ppx_accessor"
@@ -11,9 +10,9 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
-  "ocaml"    {>= "4.14.0"}
-  "accessor" {>= "v0.16" & < "v0.17"}
-  "base"     {>= "v0.16" & < "v0.17"}
+  "ocaml" {>= "4.14.0"}
+  "accessor"
+  "base"
   "dune"     {>= "2.0.0"}
   "ppxlib"   {>= "0.28.0"}
 ]
