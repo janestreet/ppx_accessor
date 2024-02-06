@@ -1,13 +1,15 @@
 type abstract [@@deriving accessors]
 
-[%%expect {|
+[%%expect
+  {|
 Line _, characters _-_:
 Error: ppx_accessor: unsupported: abstract type
 |}]
 
 type open_ = .. [@@deriving accessors]
 
-[%%expect {|
+[%%expect
+  {|
 Line _, characters _-_:
 Error: ppx_accessor: unsupported: open type
 |}]
