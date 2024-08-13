@@ -7,7 +7,9 @@ module Fields = struct
     | Record of Record.t
 
   let of_constructor_arguments = function
-    | Pcstr_tuple cts -> Tuple (Tuple.of_core_types cts)
+    | Pcstr_tuple args ->
+      let cts = List.map args ~f:Ppxlib_jane.Shim.Pcstr_tuple_arg.to_core_type in
+      Tuple (Tuple.of_core_types cts)
     | Pcstr_record lds -> Record (Record.of_label_declarations lds)
   ;;
 end
