@@ -10,13 +10,14 @@ module Kind = struct
     | Polymorphic_variant of Polymorphic_variant.t
 
   let of_type_kind tk manifest ~loc =
-    match tk with
+    match Ppxlib_jane.Shim.Type_kind.of_parsetree tk with
     | Ptype_abstract ->
       (match manifest with
        | None -> unsupported ~loc "abstract type"
        | Some ct -> Polymorphic_variant (Polymorphic_variant.of_core_type ct))
     | Ptype_variant cds -> Variant (Variant.of_constructor_declarations cds)
     | Ptype_record lds -> Record (Record.of_label_declarations lds)
+    | Ptype_record_unboxed_product _ -> unsupported ~loc "unboxed record type"
     | Ptype_open -> unsupported ~loc "open type"
   ;;
 end
