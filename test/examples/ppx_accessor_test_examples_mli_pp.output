@@ -15,37 +15,37 @@ module Simple_record : sig
     include module type of struct
       let foo =
         { Accessor.General.f =
-            (fun dictionary__004_ mapping__005_ ->
+            (fun dictionary__004_ mapping__005_ -> exclave_
               (Accessor.field
                  ~get:(fun t__003_ -> t__003_.foo)
                  ~set:(fun t__001_ foo__002_ -> { t__001_ with foo = foo__002_ }))
                 .f
                 dictionary__004_
-                mapping__005_)
+                mapping__005_ [@nontail])
         }
       ;;
 
       let bar =
         { Accessor.General.f =
-            (fun dictionary__009_ mapping__010_ ->
+            (fun dictionary__009_ mapping__010_ -> exclave_
               (Accessor.field
                  ~get:(fun t__008_ -> t__008_.bar)
                  ~set:(fun t__006_ bar__007_ -> { t__006_ with bar = bar__007_ }))
                 .f
                 dictionary__009_
-                mapping__010_)
+                mapping__010_ [@nontail])
         }
       ;;
 
       let baz =
         { Accessor.General.f =
-            (fun dictionary__014_ mapping__015_ ->
+            (fun dictionary__014_ mapping__015_ -> exclave_
               (Accessor.field
                  ~get:(fun t__013_ -> t__013_.baz)
                  ~set:(fun t__011_ baz__012_ -> { t__011_ with baz = baz__012_ }))
                 .f
                 dictionary__014_
-                mapping__015_)
+                mapping__015_ [@nontail])
         }
       ;;
     end
@@ -68,7 +68,7 @@ module Simple_inline_record : sig
     include module type of struct
       let foo =
         { Accessor.General.f =
-            (fun dictionary__020_ mapping__021_ ->
+            (fun dictionary__020_ mapping__021_ -> exclave_
               (Accessor.field
                  ~get:(fun (T t__019_) -> t__019_.foo)
                  ~set:(fun t__016_ foo__017_ ->
@@ -76,13 +76,13 @@ module Simple_inline_record : sig
                    T { t__018_ with foo = foo__017_ }))
                 .f
                 dictionary__020_
-                mapping__021_)
+                mapping__021_ [@nontail])
         }
       ;;
 
       let bar =
         { Accessor.General.f =
-            (fun dictionary__026_ mapping__027_ ->
+            (fun dictionary__026_ mapping__027_ -> exclave_
               (Accessor.field
                  ~get:(fun (T t__025_) -> t__025_.bar)
                  ~set:(fun t__022_ bar__023_ ->
@@ -90,13 +90,13 @@ module Simple_inline_record : sig
                    T { t__024_ with bar = bar__023_ }))
                 .f
                 dictionary__026_
-                mapping__027_)
+                mapping__027_ [@nontail])
         }
       ;;
 
       let baz =
         { Accessor.General.f =
-            (fun dictionary__032_ mapping__033_ ->
+            (fun dictionary__032_ mapping__033_ -> exclave_
               (Accessor.field
                  ~get:(fun (T t__031_) -> t__031_.baz)
                  ~set:(fun t__028_ baz__029_ ->
@@ -104,7 +104,7 @@ module Simple_inline_record : sig
                    T { t__030_ with baz = baz__029_ }))
                 .f
                 dictionary__032_
-                mapping__033_)
+                mapping__033_ [@nontail])
         }
       ;;
     end
@@ -126,37 +126,37 @@ module Record_with_polymorphism : sig
     include module type of struct
       let foo =
         { Accessor.General.f =
-            (fun dictionary__037_ mapping__038_ ->
+            (fun dictionary__037_ mapping__038_ -> exclave_
               (Accessor.field
                  ~get:(fun t__036_ -> t__036_.foo)
                  ~set:(fun t__034_ foo__035_ -> { t__034_ with foo = foo__035_ }))
                 .f
                 dictionary__037_
-                mapping__038_)
+                mapping__038_ [@nontail])
         }
       ;;
 
       let bar =
         { Accessor.General.f =
-            (fun dictionary__042_ mapping__043_ ->
+            (fun dictionary__042_ mapping__043_ -> exclave_
               (Accessor.field
                  ~get:(fun t__041_ -> t__041_.bar)
                  ~set:(fun t__039_ bar__040_ -> { t__039_ with bar = bar__040_ }))
                 .f
                 dictionary__042_
-                mapping__043_)
+                mapping__043_ [@nontail])
         }
       ;;
 
       let baz =
         { Accessor.General.f =
-            (fun dictionary__047_ mapping__048_ ->
+            (fun dictionary__047_ mapping__048_ -> exclave_
               (Accessor.field
                  ~get:(fun t__046_ -> t__046_.baz)
                  ~set:(fun t__044_ baz__045_ -> { t__044_ with baz = baz__045_ }))
                 .f
                 dictionary__047_
-                mapping__048_)
+                mapping__048_ [@nontail])
         }
       ;;
     end
@@ -173,13 +173,13 @@ module Singleton_record : sig
     include module type of struct
       let foo =
         { Accessor.General.f =
-            (fun dictionary__051_ mapping__052_ ->
+            (fun dictionary__051_ mapping__052_ -> exclave_
               (Accessor.isomorphism
                  ~get:(fun t__050_ -> t__050_.foo)
                  ~construct:(fun foo__049_ -> { foo = foo__049_ }))
                 .f
                 dictionary__051_
-                mapping__052_)
+                mapping__052_ [@nontail])
         }
       ;;
     end
@@ -196,13 +196,13 @@ module Singleton_inline_record : sig
     include module type of struct
       let foo =
         { Accessor.General.f =
-            (fun dictionary__055_ mapping__056_ ->
+            (fun dictionary__055_ mapping__056_ -> exclave_
               (Accessor.isomorphism
                  ~get:(fun (T t__054_) -> t__054_.foo)
                  ~construct:(fun foo__053_ -> T { foo = foo__053_ }))
                 .f
                 dictionary__055_
-                mapping__056_)
+                mapping__056_ [@nontail])
         }
       ;;
     end
@@ -219,13 +219,13 @@ module Singleton_record_with_polymorphism : sig
     include module type of struct
       let foo =
         { Accessor.General.f =
-            (fun dictionary__059_ mapping__060_ ->
+            (fun dictionary__059_ mapping__060_ -> exclave_
               (Accessor.isomorphism
                  ~get:(fun t__058_ -> t__058_.foo)
                  ~construct:(fun foo__057_ -> { foo = foo__057_ }))
                 .f
                 dictionary__059_
-                mapping__060_)
+                mapping__060_ [@nontail])
         }
       ;;
     end
@@ -246,26 +246,26 @@ module Recursive_record : sig
     include module type of struct
       let label =
         { Accessor.General.f =
-            (fun dictionary__064_ mapping__065_ ->
+            (fun dictionary__064_ mapping__065_ -> exclave_
               (Accessor.field
                  ~get:(fun t__063_ -> t__063_.label)
                  ~set:(fun t__061_ label__062_ -> { t__061_ with label = label__062_ }))
                 .f
                 dictionary__064_
-                mapping__065_)
+                mapping__065_ [@nontail])
         }
       ;;
 
       let children =
         { Accessor.General.f =
-            (fun dictionary__069_ mapping__070_ ->
+            (fun dictionary__069_ mapping__070_ -> exclave_
               (Accessor.field
                  ~get:(fun t__068_ -> t__068_.children)
                  ~set:(fun t__066_ children__067_ ->
                    { t__066_ with children = children__067_ }))
                 .f
                 dictionary__069_
-                mapping__070_)
+                mapping__070_ [@nontail])
         }
       ;;
     end
@@ -291,50 +291,50 @@ module Recursive_records : sig
     include module type of struct
       let children =
         { Accessor.General.f =
-            (fun dictionary__074_ mapping__075_ ->
+            (fun dictionary__074_ mapping__075_ -> exclave_
               (Accessor.field
                  ~get:(fun tree__073_ -> tree__073_.children)
                  ~set:(fun tree__071_ children__072_ ->
                    { tree__071_ with children = children__072_ }))
                 .f
                 dictionary__074_
-                mapping__075_)
+                mapping__075_ [@nontail])
         }
       ;;
 
       let next =
         { Accessor.General.f =
-            (fun dictionary__079_ mapping__080_ ->
+            (fun dictionary__079_ mapping__080_ -> exclave_
               (Accessor.field
                  ~get:(fun tree__078_ -> tree__078_.next)
                  ~set:(fun tree__076_ next__077_ -> { tree__076_ with next = next__077_ }))
                 .f
                 dictionary__079_
-                mapping__080_)
+                mapping__080_ [@nontail])
         }
       ;;
 
       let host =
         { Accessor.General.f =
-            (fun dictionary__084_ mapping__085_ ->
+            (fun dictionary__084_ mapping__085_ -> exclave_
               (Accessor.field
                  ~get:(fun node__083_ -> node__083_.host)
                  ~set:(fun node__081_ host__082_ -> { node__081_ with host = host__082_ }))
                 .f
                 dictionary__084_
-                mapping__085_)
+                mapping__085_ [@nontail])
         }
       ;;
 
       let id =
         { Accessor.General.f =
-            (fun dictionary__089_ mapping__090_ ->
+            (fun dictionary__089_ mapping__090_ -> exclave_
               (Accessor.field
                  ~get:(fun node__088_ -> node__088_.id)
                  ~set:(fun node__086_ id__087_ -> { node__086_ with id = id__087_ }))
                 .f
                 dictionary__089_
-                mapping__090_)
+                mapping__090_ [@nontail])
         }
       ;;
     end
@@ -361,7 +361,7 @@ module Basic_variant_type : sig
     include module type of struct
       let a =
         { Accessor.General.f =
-            (fun dictionary__093_ mapping__094_ ->
+            (fun dictionary__093_ mapping__094_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | A a__092_ -> First a__092_
@@ -369,13 +369,13 @@ module Basic_variant_type : sig
                  ~construct:(fun a__091_ -> A a__091_))
                 .f
                 dictionary__093_
-                mapping__094_)
+                mapping__094_ [@nontail])
         }
       ;;
 
       let b =
         { Accessor.General.f =
-            (fun dictionary__099_ mapping__100_ ->
+            (fun dictionary__099_ mapping__100_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | B (b__098_, b__097_) -> First (b__098_, b__097_)
@@ -383,13 +383,13 @@ module Basic_variant_type : sig
                  ~construct:(fun (b__096_, b__095_) -> B (b__096_, b__095_)))
                 .f
                 dictionary__099_
-                mapping__100_)
+                mapping__100_ [@nontail])
         }
       ;;
 
       let c =
         { Accessor.General.f =
-            (fun dictionary__101_ mapping__102_ ->
+            (fun dictionary__101_ mapping__102_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | C -> First ()
@@ -397,13 +397,13 @@ module Basic_variant_type : sig
                  ~construct:(fun () -> C))
                 .f
                 dictionary__101_
-                mapping__102_)
+                mapping__102_ [@nontail])
         }
       ;;
 
       let d =
         { Accessor.General.f =
-            (fun dictionary__105_ mapping__106_ ->
+            (fun dictionary__105_ mapping__106_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | D d__104_ -> First d__104_
@@ -411,14 +411,14 @@ module Basic_variant_type : sig
                  ~construct:(fun d__103_ -> D d__103_))
                 .f
                 dictionary__105_
-                mapping__106_)
+                mapping__106_ [@nontail])
         }
       ;;
 
       module E = struct
         let x =
           { Accessor.General.f =
-              (fun dictionary__111_ mapping__112_ ->
+              (fun dictionary__111_ mapping__112_ -> exclave_
                 (Accessor.optional
                    ~match_:(function
                      | E t__110_ -> First t__110_.x
@@ -429,13 +429,13 @@ module Basic_variant_type : sig
                      | (A _ | B _ | C | D _ | F _) as bt -> bt))
                   .f
                   dictionary__111_
-                  mapping__112_)
+                  mapping__112_ [@nontail])
           }
         ;;
 
         let y =
           { Accessor.General.f =
-              (fun dictionary__117_ mapping__118_ ->
+              (fun dictionary__117_ mapping__118_ -> exclave_
                 (Accessor.optional
                    ~match_:(function
                      | E t__116_ -> First t__116_.y
@@ -446,7 +446,7 @@ module Basic_variant_type : sig
                      | (A _ | B _ | C | D _ | F _) as bt -> bt))
                   .f
                   dictionary__117_
-                  mapping__118_)
+                  mapping__118_ [@nontail])
           }
         ;;
       end
@@ -454,7 +454,7 @@ module Basic_variant_type : sig
       module F = struct
         let z =
           { Accessor.General.f =
-              (fun dictionary__121_ mapping__122_ ->
+              (fun dictionary__121_ mapping__122_ -> exclave_
                 (Accessor.variant
                    ~match_:(function
                      | F t__120_ -> First t__120_.z
@@ -462,7 +462,7 @@ module Basic_variant_type : sig
                    ~construct:(fun z__119_ -> F { z = z__119_ }))
                   .f
                   dictionary__121_
-                  mapping__122_)
+                  mapping__122_ [@nontail])
           }
         ;;
       end
@@ -480,13 +480,13 @@ module Singleton_variant : sig
     include module type of struct
       let t =
         { Accessor.General.f =
-            (fun dictionary__125_ mapping__126_ ->
+            (fun dictionary__125_ mapping__126_ -> exclave_
               (Accessor.isomorphism
                  ~get:(fun (T t__124_) -> t__124_)
                  ~construct:(fun t__123_ -> T t__123_))
                 .f
                 dictionary__125_
-                mapping__126_)
+                mapping__126_ [@nontail])
         }
       ;;
     end
@@ -503,13 +503,13 @@ module Singleton_variant_with_polymorphism : sig
     include module type of struct
       let t =
         { Accessor.General.f =
-            (fun dictionary__129_ mapping__130_ ->
+            (fun dictionary__129_ mapping__130_ -> exclave_
               (Accessor.isomorphism
                  ~get:(fun (T t__128_) -> t__128_)
                  ~construct:(fun t__127_ -> T t__127_))
                 .f
                 dictionary__129_
-                mapping__130_)
+                mapping__130_ [@nontail])
         }
       ;;
     end
@@ -529,7 +529,7 @@ module Basic_variant_type_with_polymorphism : sig
     include module type of struct
       let a =
         { Accessor.General.f =
-            (fun dictionary__133_ mapping__134_ ->
+            (fun dictionary__133_ mapping__134_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | A a__132_ -> First a__132_
@@ -537,13 +537,13 @@ module Basic_variant_type_with_polymorphism : sig
                  ~construct:(fun a__131_ -> A a__131_))
                 .f
                 dictionary__133_
-                mapping__134_)
+                mapping__134_ [@nontail])
         }
       ;;
 
       let b =
         { Accessor.General.f =
-            (fun dictionary__135_ mapping__136_ ->
+            (fun dictionary__135_ mapping__136_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | B -> First ()
@@ -551,7 +551,7 @@ module Basic_variant_type_with_polymorphism : sig
                  ~construct:(fun () -> B))
                 .f
                 dictionary__135_
-                mapping__136_)
+                mapping__136_ [@nontail])
         }
       ;;
     end
@@ -571,7 +571,7 @@ module Recursive_variant : sig
     include module type of struct
       let nil =
         { Accessor.General.f =
-            (fun dictionary__137_ mapping__138_ ->
+            (fun dictionary__137_ mapping__138_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | Nil -> First ()
@@ -579,13 +579,13 @@ module Recursive_variant : sig
                  ~construct:(fun () -> Nil))
                 .f
                 dictionary__137_
-                mapping__138_)
+                mapping__138_ [@nontail])
         }
       ;;
 
       let cons =
         { Accessor.General.f =
-            (fun dictionary__143_ mapping__144_ ->
+            (fun dictionary__143_ mapping__144_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | Cons (cons__142_, cons__141_) -> First (cons__142_, cons__141_)
@@ -594,7 +594,7 @@ module Recursive_variant : sig
                    Cons (cons__140_, cons__139_)))
                 .f
                 dictionary__143_
-                mapping__144_)
+                mapping__144_ [@nontail])
         }
       ;;
     end
@@ -616,7 +616,7 @@ module Basic_polymorphic_variant : sig
     include module type of struct
       let foo =
         { Accessor.General.f =
-            (fun dictionary__145_ mapping__146_ ->
+            (fun dictionary__145_ mapping__146_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | `Foo -> First ()
@@ -624,13 +624,13 @@ module Basic_polymorphic_variant : sig
                  ~construct:(fun () -> `Foo))
                 .f
                 dictionary__145_
-                mapping__146_)
+                mapping__146_ [@nontail])
         }
       ;;
 
       let bar =
         { Accessor.General.f =
-            (fun dictionary__149_ mapping__150_ ->
+            (fun dictionary__149_ mapping__150_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | `Bar bar__148_ -> First bar__148_
@@ -638,13 +638,13 @@ module Basic_polymorphic_variant : sig
                  ~construct:(fun bar__147_ -> `Bar bar__147_))
                 .f
                 dictionary__149_
-                mapping__150_)
+                mapping__150_ [@nontail])
         }
       ;;
 
       let baz =
         { Accessor.General.f =
-            (fun dictionary__153_ mapping__154_ ->
+            (fun dictionary__153_ mapping__154_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | `Baz baz__152_ -> First baz__152_
@@ -652,7 +652,7 @@ module Basic_polymorphic_variant : sig
                  ~construct:(fun baz__151_ -> `Baz baz__151_))
                 .f
                 dictionary__153_
-                mapping__154_)
+                mapping__154_ [@nontail])
         }
       ;;
     end
@@ -674,7 +674,7 @@ module Polymorphic_variant_with_inherit : sig
     include module type of struct
       let wibble =
         { Accessor.General.f =
-            (fun dictionary__155_ mapping__156_ ->
+            (fun dictionary__155_ mapping__156_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | `Wibble -> First ()
@@ -682,13 +682,13 @@ module Polymorphic_variant_with_inherit : sig
                  ~construct:(fun () -> `Wibble))
                 .f
                 dictionary__155_
-                mapping__156_)
+                mapping__156_ [@nontail])
         }
       ;;
 
       let wobble =
         { Accessor.General.f =
-            (fun dictionary__159_ mapping__160_ ->
+            (fun dictionary__159_ mapping__160_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | `Wobble wobble__158_ -> First wobble__158_
@@ -696,13 +696,13 @@ module Polymorphic_variant_with_inherit : sig
                  ~construct:(fun wobble__157_ -> `Wobble wobble__157_))
                 .f
                 dictionary__159_
-                mapping__160_)
+                mapping__160_ [@nontail])
         }
       ;;
 
       let basic_polymorphic_variant_t =
         { Accessor.General.f =
-            (fun dictionary__161_ mapping__162_ ->
+            (fun dictionary__161_ mapping__162_ -> exclave_
               (Accessor.variant
                  ~match_:(function
                    | #Basic_polymorphic_variant.t as a -> First a
@@ -710,7 +710,7 @@ module Polymorphic_variant_with_inherit : sig
                  ~construct:(fun (#Basic_polymorphic_variant.t as bt) -> bt))
                 .f
                 dictionary__161_
-                mapping__162_)
+                mapping__162_ [@nontail])
         }
       ;;
     end
@@ -727,13 +727,13 @@ module Singleton_polymorphic_variant : sig
     include module type of struct
       let foo =
         { Accessor.General.f =
-            (fun dictionary__165_ mapping__166_ ->
+            (fun dictionary__165_ mapping__166_ -> exclave_
               (Accessor.isomorphism
                  ~get:(fun (`Foo foo__164_) -> foo__164_)
                  ~construct:(fun foo__163_ -> `Foo foo__163_))
                 .f
                 dictionary__165_
-                mapping__166_)
+                mapping__166_ [@nontail])
         }
       ;;
     end
@@ -758,13 +758,13 @@ module Gadt_syntax : sig
     include module type of struct
       let t =
         { Accessor.General.f =
-            (fun dictionary__171_ mapping__172_ ->
+            (fun dictionary__171_ mapping__172_ -> exclave_
               (Accessor.isomorphism
                  ~get:(fun (T (t__170_, t__169_)) -> t__170_, t__169_)
                  ~construct:(fun (t__168_, t__167_) -> T (t__168_, t__167_)))
                 .f
                 dictionary__171_
-                mapping__172_)
+                mapping__172_ [@nontail])
         }
       ;;
     end
@@ -787,37 +787,37 @@ module Simple_record_with_submodule : sig
       module Foo = struct
         let foo =
           { Accessor.General.f =
-              (fun dictionary__176_ mapping__177_ ->
+              (fun dictionary__176_ mapping__177_ -> exclave_
                 (Accessor.field
                    ~get:(fun t__175_ -> t__175_.foo)
                    ~set:(fun t__173_ foo__174_ -> { t__173_ with foo = foo__174_ }))
                   .f
                   dictionary__176_
-                  mapping__177_)
+                  mapping__177_ [@nontail])
           }
         ;;
 
         let bar =
           { Accessor.General.f =
-              (fun dictionary__181_ mapping__182_ ->
+              (fun dictionary__181_ mapping__182_ -> exclave_
                 (Accessor.field
                    ~get:(fun t__180_ -> t__180_.bar)
                    ~set:(fun t__178_ bar__179_ -> { t__178_ with bar = bar__179_ }))
                   .f
                   dictionary__181_
-                  mapping__182_)
+                  mapping__182_ [@nontail])
           }
         ;;
 
         let baz =
           { Accessor.General.f =
-              (fun dictionary__186_ mapping__187_ ->
+              (fun dictionary__186_ mapping__187_ -> exclave_
                 (Accessor.field
                    ~get:(fun t__185_ -> t__185_.baz)
                    ~set:(fun t__183_ baz__184_ -> { t__183_ with baz = baz__184_ }))
                   .f
                   dictionary__186_
-                  mapping__187_)
+                  mapping__187_ [@nontail])
           }
         ;;
       end
